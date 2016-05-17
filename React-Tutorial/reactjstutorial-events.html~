@@ -13,11 +13,14 @@
 		<script type="text/jsx">
 		
 			var JasonsComponent = React.createClass({
+				doSomething: function () {
+	alert(this.props.children);
+},
 				render: function() {
 					return(
 					<div>
 						<h3>{this.props.user}</h3>	
-						<p>{this.props.children}</p>
+						<a onClick={this.doSomething}>Click Me</a>
 					</div>				
 					);				
 				}			

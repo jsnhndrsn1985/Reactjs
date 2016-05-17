@@ -13,9 +13,15 @@
 		<script type="text/jsx">
 		
 			var JasonsComponent = React.createClass({
+				doSomething: function () {
+	alert(this.props.children);
+},
 				render: function() {
 					return(
-						<h2>{this.props.user} likes to eat {this.props.food}</h2>					
+					<div>
+						<h3>{this.props.user}</h3>	
+						<a onClick={this.doSomething} href="">Click Me</a>
+					</div>				
 					);				
 				}			
 			
@@ -23,10 +29,10 @@
 			
 			React.render(
 				<div>
-					<JasonsComponent user="Jason" food="Bacon" />
-					<JasonsComponent user="Alysha" food="Tuna" />
-					<JasonsComponent user="Lola" food="Beef" />
-					<JasonsComponent user="Felix" food="Eggs" />
+					<JasonsComponent user="Jason">Is my name.</JasonsComponent>
+					<JasonsComponent user="Alysha">Is my wifes name.</JasonsComponent>
+					<JasonsComponent user="Lola">Is my cats name.</JasonsComponent>
+					<JasonsComponent user="Felix">Is my sons name.</JasonsComponent>
 				</div>,
 				document.getElementById('content')
 			);
